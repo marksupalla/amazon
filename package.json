@@ -22,14 +22,14 @@
   },
   "repository": {
     "type": "git",
-    "url": "https://github.com/nss-cohort-2014-06-07/amazon"
+    "url": "https://github.com/marksupalla/amazon"
   },
-  "author": "Chyld Medford <chyld.medford@gmail.com>",
+  "author": "marksupalla <marksupalla@gmail.com>",
   "license": "MIT",
   "bugs": {
-    "url": "https://github.com/nss-cohort-2014-06-07/amazon/issues"
+    "url": "https://github.com/marksupalla/amazon/issues"
   },
-  "homepage": "https://github.com/nss-cohort-2014-06-07/amazon",
+  "homepage": "https://github.com/marksupalla/amazon",
   "dependencies": {
     "async": "^0.9.0",
     "bcrypt": "^0.8.0",

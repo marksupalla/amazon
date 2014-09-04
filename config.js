@@ -28,4 +28,8 @@ config.evernote = {
   apiSecret      : process.env.EVERNOTE_SECRET,
   callbackUrl    : 'http://mark-vm.com:2110/auth/evernote/callback'
 };
+config.stripe = {
+  apiKey         : 'pk_test_QuvO8ZpHYv5EruiADyPV6fse',
+  apiSecret      : process.env.STRIPE_SECRET
+};
 module.exports = config;

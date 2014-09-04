@@ -1,0 +1,31 @@
+{
+  "_id":{"$oid":"000000000000000000000001"},
+  "name":"Book",
+  "money":10.99,
+  "photo":"http://smartmobilestudio.com/wp-content/uploads/2012/06/leather-book-preview.png"
+}
+{
+  "_id":{"$oid":"000000000000000000000002"},
+  "name":"DVD",
+  "money":19.99,
+  "photo":"http://www.api-play.org/upload/public/images/webpage/image313.jpg"
+}
+{
+  "_id":{"$oid":"000000000000000000000003"},
+  "name":"Bike",
+  "money":100.99,
+  "photo":"http://www.ebicycles.com/bicycle-tools/images/road-bike-classic.gif?1310180857"
+}
+{
+  "_id":{"$oid":"000000000000000000000004"},
+  "name":"CD",
+  "money":7.99,
+  "photo":"http://ecx.images-amazon.com/images/I/41TGE7V0K3L.jpg"
+}
+{
+  "_id":{"$oid":"000000000000000000000005"},
+  "name":"Jeans",
+  "money":49.99,
+  "photo":"http://www.esquire.com/cm/esquire/images/lF/esq-jeans-081512-xlg.jpg"
+}
+

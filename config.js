@@ -18,4 +18,14 @@ config.google = {
   clientSecret   : process.env.GOOGLE_SECRET,
   callbackUrl    : 'http://mark-vm.com:2110/auth/google/callback'
 };
+config.trello = {
+  apiKey         : 'fe2f9a61f9798f2a985d0081af2670bd',
+  apiSecret      : process.env.TRELLO_SECRET,
+  callbackUrl    : 'http://mark-vm.com:2110/auth/trello/callback'
+};
+config.evernote = {
+  apiKey         : 'marksupalla',
+  apiSecret      : process.env.EVERNOTE_SECRET,
+  callbackUrl    : 'http://mark-vm.com:2110/auth/evernote/callback'
+};
 module.exports = config;

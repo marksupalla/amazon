@@ -14,8 +14,8 @@ User.findById = function(id, cb){
   var _id = Mongo.ObjectID(id);
   User.collection.findOne({_id:_id}, function(err,obj){
     var user = Object.create(User.prototype);
-        user = _.extend(user, obj);
-        cb(err, user);
+    user = _.extend(user, obj);
+    cb(err, user);
   });
 };
 
@@ -43,7 +43,7 @@ User.prototype.save = function(o, cb){
   properties.forEach(function(property){
     self[property] = o[property];
 
-});
+  });
 
   User.collection.save(this, cb);
 };
@@ -71,8 +71,22 @@ User.googleAuthenticate = function(token, secret, google, cb){
     user = {googleId:google.id, username:google.username, type: 'google'};
     User.collection.save(user, cb);
   });
-  console.log(google);
 };
 
+User.trelloAuthenticate = function(token, secret, trello, cb){
+  User.collection.findOne({trelloId:trello.id}, function(err, user){
+    if(user){return cb(null, user);}
+    user = {trelloId:trello.id, username:trello.username, type: 'trello'};
+    User.collection.save(user, cb);
+  });
+};
+
+User.evernoteAuthenticate = function(token, secret, evernote, cb){
+  User.collection.findOne({evernoteId:evernote.id}, function(err, user){
+    if(user){return cb(null, user);}
+    user = {evernoteId:evernote.id, username:evernote.username, type: 'evernote'};
+    User.collection.save(user, cb);
+  });
+};
 module.exports = User;
 

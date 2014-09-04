@@ -28,11 +28,11 @@ exports.create = function(req, res){
 
 exports.edit = function(req, res){
   res.render('users/edit');
-  };
+};
 
 exports.update = function(req, res){
   req.user.save(req.body, function(){
-  res.redirect('/profile');
+    res.redirect('/profile');
   });
 };
 

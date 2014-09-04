@@ -12,7 +12,9 @@ var morgan         = require('morgan'),
     security       = require('../lib/security'),
     debug          = require('../lib/debug'),
     home           = require('../controllers/home'),
-    users          = require('../controllers/users');
+    users          = require('../controllers/users'),
+    cart           = require('../controllers/cart'),
+    products       = require('../controllers/products');
 
 module.exports = function(app, express){
   app.use(morgan('dev'));
@@ -32,17 +34,24 @@ module.exports = function(app, express){
   app.post('/register', users.create);
   app.get('/login', users.login);
   app.post('/login', passport.authenticate('local', {successRedirect:'/', failureRedirect:'/login'}));
-  app.get('/auth/twitter',          passport.authenticate('twitter'));
-  app.get('/auth/twitter/callback', passport.authenticate('twitter', {successRedirect:'/', failureRedirect:'/login', successFlash: 'successful login', failureFlash: 'try again!'}));
-  app.get('/auth/github',           passport.authenticate('github'));
-  app.get('/auth/github/callback',  passport.authenticate('github', {successRedirect:'/', failureRedirect:'/login', successFlash: 'successful login', failureFlash: 'try again!'}));
-  app.get('/auth/google',           passport.authenticate('google',  {scope: ['https://www.googleapis.com/auth/plus.login', 'https://www.googleapis.com/auth/plus.profile.emails.read']}));
-  app.get('/auth/google/callback',  passport.authenticate('google',  {successRedirect:'/', failureRedirect:'/login', failureFlash:'Error during login.', successFlash:'Welcome to our world.'}));
+  app.get('/auth/twitter',            passport.authenticate('twitter'));
+  app.get('/auth/twitter/callback',   passport.authenticate('twitter', {successRedirect:'/', failureRedirect:'/login', successFlash: 'successful login', failureFlash: 'try again!'}));
+  app.get('/auth/github',             passport.authenticate('github'));
+  app.get('/auth/github/callback',    passport.authenticate('github', {successRedirect:'/', failureRedirect:'/login', successFlash: 'successful login', failureFlash: 'try again!'}));
+  app.get('/auth/google',             passport.authenticate('google',  {scope: ['https://www.googleapis.com/auth/plus.login', 'https://www.googleapis.com/auth/plus.profile.emails.read']}));
+  app.get('/auth/google/callback',    passport.authenticate('google',  {successRedirect:'/', failureRedirect:'/login', failureFlash:'Error during login.', successFlash:'Welcome to our world.'}));
+  app.get('/auth/trello',             passport.authenticate('trello'));
+  app.get('/auth/trello/callback',    passport.authenticate('trello', {successRedirect:'/', failureRedirect:'/login', successFlash: 'successful login', failureFlash: 'try again!'}));
+  app.get('/auth/evernote',           passport.authenticate('evernote'));
+  app.get('/auth/evernote/callback',  passport.authenticate('evernote', {successRedirect:'/', failureRedirect:'/login', successFlash: 'successful login', failureFlash: 'try again!'}));
   app.use(security.bounce);
   app.delete('/logout', users.logout);
   app.get('/profile/edit', users.edit);
   app.put('/profile', users.update);
   app.get('/profile', users.show);
+  app.get('/products', products.index);
+  app.post('/cart', cart.add);
+  app.get('/cart', cart.index);
   console.log('Express: Routes Loaded');
 };
 

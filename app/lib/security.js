@@ -6,7 +6,7 @@ exports.locals = function(req, res, next){
 
   var keys = Object.keys(req.session.flash || {});
   keys.forEach(function(key){
-  res.locals.flash[key] = req.flash(key);
+    res.locals.flash[key] = req.flash(key);
 
   });
   next();

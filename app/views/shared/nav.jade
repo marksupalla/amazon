@@ -13,6 +13,8 @@
         if user
           li: a(href='/profile/edit') Edit Profile
           li: a(href='/profile') Profile
+          li: a(href='/products') Products
+          li: a(href='/cart') Cart
           li
             form.navbar-form(method='post', action='/logout')
               .form-group
@@ -21,7 +23,9 @@
         else
           li: a(href='/register'): i.fa.fa-user.fa-lg &nbsp; Register
           li: a(href='/login'): i.fa.fa-bolt.fa-lg &nbsp; Login
-          li: a(href='/auth/twitter'): i.fa.fa-twitter.fa-lg &nbsp; Twitter
-          li: a(href='/auth/github'): i.fa.fa-github.fa-lg &nbsp; GitHub
-          li: a(href='/auth/google'): i.fa.fa-google.fa-lg &nbsp; Google
+          li: a(href='/auth/twitter'): i.fa.fa-twitter.fa-lg &nbsp;
+          li: a(href='/auth/github'): i.fa.fa-github-alt.fa-lg &nbsp;
+          li: a(href='/auth/google'): i.fa.fa-google.fa-lg &nbsp;
+          li: a(href='/auth/trello'): i.fa.fa-trello.fa-lg &nbsp;
+          li: a(href='/auth/evernote'): i.fa.fa-envelope.fa-lg &nbsp;
 

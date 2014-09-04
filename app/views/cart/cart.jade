@@ -1,0 +1,17 @@
+extends ../shared/template
+block content
+  table#products.table.table-striped
+    thead
+      tr
+        th Product
+        th Image
+        th Price
+    tbody
+      each product in cart
+        tr
+          td= product.name
+          td(style='background-image:url("#{product.photo}")')
+          td $#{product.money.toFixed(2)}
+
+
+block scripts
